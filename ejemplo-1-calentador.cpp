@@ -11,6 +11,7 @@ public: //Todo lo declarado despues de aqui son variables publicas
     void calentar();
     void enfriar();
     void imprimeTemperatura();
+    void imprimeTemperaturaFaren() const; 
     int accedeTemperatura() const; // el const es para decirle a la funcion que se va acceder a ella pero NO modifica nada 
 }; //Punto y coma obligatorio (parte de la sintaxis)
 
@@ -38,7 +39,12 @@ void Calentador::enfriar()
 
 void Calentador::imprimeTemperatura()
 {
-    std::cout <<"La Temperatura es: "<<temperatura<< std::endl; // el "std::endl" es para hacer un salto de linea, es lo mismo que \n
+    std::cout <<"La Temperatura es: "<<temperatura<<"°C"<< std::endl; // el "std::endl" es para hacer un salto de linea, es lo mismo que \n
+}
+
+void Calentador::imprimeTemperaturaFaren()
+{
+    std::cout <<"La temperatura en Farenheit es: "<< temperatura*1.8+32<<"°F"<< std::endl;
 }
 
 int Calentador::accedeTemperatura() const
@@ -50,14 +56,10 @@ int main()
 {
     Calentador c1, c2;
     
-    for(int i=0;i<10;i++){
-        c1.calentar();
-        c1.imprimeTemperatura();
-    }
+    c1.calentar();
+    c1.imprimeTemperatura();
     
-    for(int i=0;i<10;i++)
-    {
-        c2.enfriar();
-        c2.imprimeTemperatura();
-    }
+    c2.enfriar();
+    c2.imprimeTemperatura();
+
 }
