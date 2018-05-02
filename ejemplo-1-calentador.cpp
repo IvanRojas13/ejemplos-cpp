@@ -13,6 +13,7 @@ public: //Todo lo declarado despues de aqui son variables publicas
     void imprimeTemperatura() const;
     void imprimeTemperaturaFaren() const; 
     int accedeTemperatura() const; // el const es para decirle a la funcion que se va acceder a ella pero NO modifica nada 
+    bool operator==(Calentador otro);
 }; //Punto y coma obligatorio (parte de la sintaxis)
 
 Calentador::Calentador(int max, int min, int temperatura)
@@ -67,11 +68,26 @@ int Calentador::accedeTemperatura() const
     return temperatura;
 }
 
+bool Calentador::operator==(Calentador otro)
+{
+    if(this->temperatura == otro.temperatura){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 int main()
 {
     //try
     {
-        Calentador c1{-10,10}, c2{0,30, -10};
+        Calentador c1{-10,10}, c2{0,30, 10};
+        
+        if(c1==c2){
+            std::cout<<"Iguales\n";
+        }else{
+            std::cout<<"Diferentes\n";
+        }
     
         c1.calentar();
         c1.imprimeTemperatura();
@@ -83,3 +99,5 @@ int main()
     //}
     //catch(const std::runtime_error e)
 }
+
+class Calentador
