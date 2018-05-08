@@ -77,22 +77,34 @@ bool Calentador::operator==(Calentador otro)
     }
 }
 
+bool Calentador::operator ==(Calentador otro)
+{
+    if(this->temperatura==otro.temperatura){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 int main()
 {
     //try
     {
         Calentador c1{-10,10}, c2{0,30, 10};
         
+        //c1==c2 es equivalente a c1.operator==(c2)
         if(c1==c2){
             std::cout<<"Iguales\n";
         }else{
             std::cout<<"Diferentes\n";
         }
     
-        c1.calentar();
+        //++c1 es equivalente a c1.operator++()
+        ++c1;
         c1.imprimeTemperatura();
         c1.imprimeTemperaturaFaren();
     
+        //++c2 es equivalente a c2.operator--()
         c2.enfriar();
         c2.imprimeTemperatura();
         c2.imprimeTemperaturaFaren();
