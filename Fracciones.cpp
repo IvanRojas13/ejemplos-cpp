@@ -25,25 +25,11 @@ Fraccion Fraccion::operator +(const Fraccion& f2)
     return fr;
 }
 
-/*void operator<<(std::ostream& salida, Fraccion f)
-{
-    salida<<f.numerador<<"/"<<f.denominador<<"\n";
-}*/
-
-/*int main()
-{
-    Fraccion f1={3,4},f2={7,3},f3;
-    std::cin>>f1;
-    std::cin>>f2;
-    f3=f1+f2;
-    std::cout<<f3;
-}*/
-
 int main()
 {
     Fraccion a{1,2}; // fracción 1/2
     Fraccion b{1,3}; // fracción 1/3
     // Las siguientes dos sentencias son equivalentes
-     Fraccion c = a + b; //c tendrá la fracción 5/6
-    //Fraccion c = a.operator+(b); //también se puede usar la notación funcional
+    //Fraccion c = a + b; //c tendrá la fracción 5/6
+    Fraccion c = a.operator+(b); //también se puede usar la notación funcional
 };
