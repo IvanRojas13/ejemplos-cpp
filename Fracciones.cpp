@@ -30,6 +30,6 @@ int main()
     Fraccion a{1,2}; // fracción 1/2
     Fraccion b{1,3}; // fracción 1/3
     // Las siguientes dos sentencias son equivalentes
-    //Fraccion c = a + b; //c tendrá la fracción 5/6
-    Fraccion c = a.operator+(b); //también se puede usar la notación funcional
+    Fraccion c = a + b; //c tendrá la fracción 5/6
+    //Fraccion c = a.operator+(b); //también se puede usar la notación funcional
 };

@@ -7,7 +7,7 @@ class Polinomio
   
   public:
   Polinomio(int ax, int bx, int c);
-  int operator ()(int x);
+  Polinomio operator ()(const Polinomio& p);
 };
 
 Polinomio::Polinomio(int ax, int bx, int c)
@@ -17,7 +17,7 @@ Polinomio::Polinomio(int ax, int bx, int c)
   this->entc=c;
 }
 
-int Polinomio::operator ()(int x)
+Polinomio Polinomio::operator ()(const Polinomio& p)
 {
   Polinomio pr;
   pr.entax=this->entax*(x**2);
@@ -29,5 +29,7 @@ int Polinomio::operator ()(int x)
 int main()
 {
   Polinomio p{3,2,1};
-  
+  int x=2;
+  int r=p(x);
+  std::cout<<"resultado= "<<r;
 };
